@@ -2,7 +2,7 @@ import pyautogui as py
 from colorama import Fore,Style
 from time import sleep
 import os
-
+import win32api,win32con
 # Text Colors
 _Y = Fore.YELLOW
 _C = Fore.CYAN
@@ -12,16 +12,22 @@ _R = Fore.RED
 reportX = 1377
 CTreportY = [405,432,456,483,508]
 TreportY = [665,690,715,742,769]
-BWalls = 1180,505
-BAim = 1180,560
-Bsubmit = 1161,696
+
+# Buttons for WallHacks
+BWallsX,BWallsY = 1180,505
+
+# Buttons for  AimHacks
+BAimX,BAimY  = 1180,560
+
+# Submit Button
+BsubmitX,BsubmitY = 1161, 696
 
 # Click Delay
-delay = 0.3
+delay = 0.35
 
 while True:
     os.system('cls')
-    os.system('title Reporter Them Bitches!')
+    os.system('title Report Them Bitches!')
     logo = f'''
 \t{_R} ██████╗███████╗██████╗     {_C}██████╗ ███████╗██████╗  ██████╗ ██████╗ ████████╗███████╗██████╗ 
 \t{_R}██╔════╝██╔════╝╚════██╗    {_C}██╔══██╗██╔════╝██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
@@ -48,44 +54,51 @@ while True:
     print(f'\n\t{_Y}Just enter a number from {_C}1{_Y} to {_C}9,999,999,999,999{_Y}')
     amount = int(input(f'\t{Fore.RED}How many reports ? : '))
     
+    def click(x, y):
+        win32api.SetCursorPos((x, y))
+        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTDOWN, 0, 0)
+        sleep(0.1)
+        win32api.mouse_event(win32con.MOUSEEVENTF_LEFTUP, 0, 0)
+
+
     sleep(3)
     if team == '1':
         if  whatkind == '1':
             for x in range(amount):
-                py.click(reportX,CTreportY[player-1])
+                click(reportX,CTreportY[player-1])
                 sleep(delay)
-                py.click(BWalls)
+                click(BWallsX,BWallsY)
                 sleep(delay)
-                py.click(Bsubmit)
+                click(BsubmitX,BsubmitY)
                 sleep(delay)
 
         elif whatkind == '2' and team == '1':
             for x in range(amount):
-                py.click(reportX,CTreportY[player-1])
+                click(reportX,CTreportY[player-1])
                 sleep(delay)
-                py.click(BAim)
+                click(BAimX,BAimY)
                 sleep(delay)
-                py.click(Bsubmit)
+                click(BsubmitX,BsubmitY)
                 sleep(delay)
         else:
             print('Something went wrong!')
     elif team == '2':
         if  whatkind == '1'  and team == '2':
             for x in range(amount):
-                py.click(reportX,TreportY[player-1])
+                click(reportX,TreportY[player-1])
                 sleep(delay)
-                py.click(BWalls)
+                click(BWallsX,BWallsY)
                 sleep(delay)
-                py.click(Bsubmit)
+                click(BsubmitX,BsubmitY)
                 sleep(delay)
 
         elif whatkind == '2'  and team == '2':
             for x in range(amount):
-                py.click(reportX,TreportY[player-1])
+                click(reportX,TreportY[player-1])
                 sleep(delay)
-                py.click(BAim)
+                click(BAimX,BAimY)
                 sleep(delay)
-                py.click(Bsubmit)
+                click(BsubmitX,BsubmitY)
                 sleep(delay)
         else:
             print('Something went wrong!')
