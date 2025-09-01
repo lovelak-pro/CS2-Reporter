@@ -1,5 +1,7 @@
 # CS2-Reporter
 
+## Whats New?
+
 ## Screenshots
 
 ![image](assets/1.png)
