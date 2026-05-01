@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS2 Reporter</title>
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+      }
+      body {
+        text-align: center;
+        font-family:
+          "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+      h2 span {
+        color: red;
+      }
+      h2 {
+        margin-top: 15px;
+        font-weight: bolder;
+        text-transform: uppercase;
+      }
+      select,
+      input,
+      button {
+        box-shadow: 2px 2px rgb(255, 0, 0);
+        width: 220px;
+        background-color: transparent;
+        outline: none;
+        border: 1px black solid;
+        border-radius: 0;
+        padding: 0 5px;
+        margin-top: 5px;
+        height: 30px;
+        transition: 0.5s;
+        text-align: center;
+      }
+      select:hover,
+      input:hover,
+      button:hover {
+        box-shadow: 3px 3px rgb(0, 0, 0);
+      }
+      #delaytime{
+        margin: 5px 0 -3px 0;
+      }
+      #speed {
+        -webkit-appearance: none;
+        width: 210px;
+        height: 15px;
+        background: transparent;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+      }
+
+      #speed:hover {
+        opacity: 1;
+      }
+
+      #speed::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 15px;
+        background: #ff0c0c;
+        cursor: pointer;
+      }
+
+      #speed::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: #04aa6d;
+        cursor: pointer;
+      }
+      #amount {
+        width: 210px;
+      }
+      #alert {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+      #alert a {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2><span>CS2</span> Report Spammer</h2>
+    <select name="" id="team">
+      <option value="none">Select Enemy Team</option>
+      <option value="CT">CT - Counter Terrorist</option>
+      <option value="T">T - Terrorist</option>
+    </select>
+    <br />
+    <select id="player">
+      <option value="none">Select Player Number</option>
+      <option value="1">Player 1</option>
+      <option value="2">Player 2</option>
+      <option value="3">Player 3</option>
+      <option value="4">Player 4</option>
+      <option value="5">Player 5</option>
+    </select>
+    <br />
+    <select id="whatkind">
+      <option value="none">What Type Of Cheat?</option>
+      <option value="wall">Wall Hacks</option>
+      <option value="aim">Aim Hacks</option>
+    </select>
+    <br />
+    <p id="delaytime">ad</p>
+    <input type="range" onchange="update()" min="1" value="3" max="10" id="speed" />
+    <br />
+    <input type="number" placeholder="Enter Spam Amount..." id="amount" />
+    <br />
+    <button id="start" onclick="start()">Start</button>
+    <p id="alert">
+      Developed By <a href="https://lovelak.rf.gd" target="_blank">Lovelak</a>
+    </p>
+
+    <script>
+      const Team = document.getElementById("team");
+      const Player = document.getElementById("player");
+      const Whatkind = document.getElementById("whatkind");
+      const DelayTime = document.getElementById('delaytime');
+      const Speed = document.getElementById("speed");
+      const Amount = document.getElementById("amount");
+      const Alert = document.getElementById("alert");
+      const Start = document.getElementById("start");
+      
+      DelayTime.innerHTML = 'Delay Between Clicks is 0.'+Speed.value+'s';        
+      function update() {
+      DelayTime.innerHTML = 'Delay Between Clicks is 0.'+Speed.value+'s';        
+      }
+
+      function start() {
+        if (Start.innerHTML === "Start") {
+          if (
+            Team.value === "none" ||
+            Player.value === "none" ||
+            Whatkind.value === "none" ||
+            Amount.value === "" ||
+            Amount.value < "0"
+          ) {
+            Alert.innerHTML = "Please Make Sure All Fields Are Set.";
+            setTimeout(() => {
+              Alert.innerHTML =
+                'Developed By <a href="https://lovelak.rf.gd" target="_blank">Lovelak</a>';
+            }, 3000);
+          } else {
+            window.pywebview.api.start(
+              Team.value,
+              Player.value,
+              Whatkind.value,
+              Speed.value,
+              Amount.value,
+            );
+            Start.innerHTML = "Stop";
+            Alert.innerHTML =
+              Amount.value + " Reports For Player " + Player.value + " Start";
+            setTimeout(() => {
+              Alert.innerHTML =
+                'Developed By <a href="https://lovelak.rf.gd" target="_blank">Lovelak</a>';
+            }, 3000);
+          }
+        } else {
+          window.pywebview.api.stop();
+          Start.innerHTML = "Start";
+          Alert.innerHTML = "Report Spam Stopped...";
+          setTimeout(() => {
+            Alert.innerHTML =
+              'Developed By <a href="https://lovelak.rf.gd" target="_blank">Lovelak</a>';
+          }, 3000);
+        }
+      }
+    </script>
+  </body>
+</html>
