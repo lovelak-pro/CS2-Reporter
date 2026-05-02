@@ -4,7 +4,7 @@
 
 ## Screenshots
 
-![image](assets/GUI-Preview.png)
+![image](assets/Preview-GIF.gif)
 
 ## Description
 
