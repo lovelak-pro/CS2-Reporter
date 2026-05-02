@@ -1,9 +1,10 @@
 import webview
 from time import sleep
 import os
-from pyautogui import click,moveTo
 from pymsgbox import confirm
 from keyboard import is_pressed
+from pyautogui import click,moveTo
+
 
 # All Buttons X,Y Pos
 reportX = 1377
@@ -36,13 +37,13 @@ class APP():
                 if self.is_running == False or is_pressed('f3'):
                     break
                 else:
-                    moveTo(reportX,CTreportY[int(Player)-1],duration=0.25)
+                    moveTo(reportX,CTreportY[int(Player)-1],duration=0.2)
                     click(reportX,CTreportY[int(Player)-1])
                     sleep(Speed)
-                    moveTo(BAimX,BAimY,duration=0.25)
+                    moveTo(BAimX,BAimY,duration=0.2)
                     click(BAimX,BAimY)
                     sleep(Speed)
-                    moveTo(BsubmitX,BsubmitY,duration=0.25)
+                    moveTo(BsubmitX,BsubmitY,duration=0.2)
                     click(BsubmitX,BsubmitY)
                     sleep(Speed)
 
@@ -52,13 +53,13 @@ class APP():
                 if self.is_running == False or is_pressed('f3'):
                     break
                 else:
-                    moveTo(reportX,TreportY[int(Player)-1],duration=0.25)
+                    moveTo(reportX,TreportY[int(Player)-1],duration=0.2)
                     click(reportX,TreportY[int(Player)-1])
                     sleep(Speed)
-                    moveTo(BAimX,BAimY,duration=0.25)
+                    moveTo(BAimX,BAimY,duration=0.2)
                     click(BAimX,BAimY)
                     sleep(Speed)
-                    moveTo(BsubmitX,BsubmitY,duration=0.25)
+                    moveTo(BsubmitX,BsubmitY,duration=0.2)
                     click(BsubmitX,BsubmitY)
                     sleep(Speed)
 
@@ -68,13 +69,13 @@ class APP():
                 if self.is_running == False or is_pressed('f3'):
                     break
                 else:
-                    moveTo(reportX,CTreportY[int(Player)-1],duration=0.25)
+                    moveTo(reportX,CTreportY[int(Player)-1],duration=0.2)
                     click(reportX,CTreportY[int(Player)-1])
                     sleep(Speed)
-                    moveTo(BWallsX,BWallsY,duration=0.25)
+                    moveTo(BWallsX,BWallsY,duration=0.2)
                     click(BWallsX,BWallsY)
                     sleep(Speed)
-                    moveTo(BsubmitX,BsubmitY,duration=0.25)
+                    moveTo(BsubmitX,BsubmitY,duration=0.2)
                     click(BsubmitX,BsubmitY)
                     sleep(Speed)
 
@@ -84,13 +85,13 @@ class APP():
                 if self.is_running == False or is_pressed('f3'):
                     break
                 else:
-                    moveTo(reportX,TreportY[int(Player)-1],duration=0.25)
+                    moveTo(reportX,TreportY[int(Player)-1],duration=0.2)
                     click(reportX,TreportY[int(Player)-1])
                     sleep(Speed)
-                    moveTo(BWallsX,BWallsY,duration=0.25)
+                    moveTo(BWallsX,BWallsY,duration=0.2)
                     click(BWallsX,BWallsY)
                     sleep(Speed)
-                    moveTo(BsubmitX,BsubmitY,duration=0.25)
+                    moveTo(BsubmitX,BsubmitY,duration=0.2)
                     click(BsubmitX,BsubmitY)
                     sleep(Speed)
 
