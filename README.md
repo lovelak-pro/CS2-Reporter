@@ -4,13 +4,15 @@
 
 ## Screenshots
 
-![image](assets/1.png)
+![image](assets/GUI-Preview.png)
 
 ## Description
 
 This script automates the process of reporting players for cheating in CS2. It simulates mouse clicks to navigate the in-game report menu and submit reports for suspected cheaters.
 
 ## Features
+
+- **User-Friendly Interface:** A simple GUI to input the necessary information for reporting.
 
 - **Automated Reporting:** Automatically clicks through the report menu.
 - **Team Selection:** Allows you to specify the team (CT or T) of the player you want to report.
