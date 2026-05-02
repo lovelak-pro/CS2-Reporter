@@ -24,7 +24,8 @@ This script automates the process of reporting players for cheating in CS2. It s
 
 - Python 3.x
 - `pyautogui` library
-- `colorama` library
+- `webview` library
+- `pymsgbox` library
 
 ## Installation
 
@@ -32,11 +33,11 @@ This script automates the process of reporting players for cheating in CS2. It s
 2.  Install the required libraries:
 
 ```sh
-pip install pyautogui colorama
+pip install pyautogui pywebview pymsgbox
 ```
 
 To run :
 
 ```sh
-python cs2_reporter.py
+python main.py
 ```
