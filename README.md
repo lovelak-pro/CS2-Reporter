@@ -1,5 +1,5 @@
 # CS2-Reporter 
-## [Download Here](https://github.com/lovelak-pro/CS2-Reporter/releases/download/1.1.1/CS2-Reporter.exe)
+
 ## Whats New?
 
 ## Screenshots
